@@ -1,0 +1,13 @@
+Reference: https://www.pololu.com/product/2997
+           R-Pi-4GPIO-Pinout
+
+1. connect power supply to VIN and GND pins on the TB9051FTG carrier(voltage 5v). (should I use power from Raspberry?)
+2. connect the two terminals of the DC motor to the OUT1 and OUT2 pins on the TB9051FTG carrier.
+3. connect a GPIO pin from the Raspberry Pi to the PWM pin on the TB9051FTG. 
+This will be used to control the speed of the motor. (We use GPIO 18 for this)
+
+4. connect a GPIO pin from the Raspberry pi to the DIR pin on the TB9051FTG.
+This will be used to control the direction of the motor. (We use GPIO 23 for this)
+
+5. connect a GND pin from the Raspberry pi to a GND pin on the TB9051FTG. (To ensure a common ground)
+6. notice the motor has 6 pinouts
