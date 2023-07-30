@@ -3,22 +3,26 @@ import numpy as np
 from yolov5 import YOLOv5
 
 class Robot:
-    def __init__(self, yolo, target_area):
+    def __init__(self, yolo, target_area, cap):
         self.yolo = yolo
         self.target_area = target_area
+        self.cap = cap
 
     def navigate_to(self):
         while True:
             # Capture a frame from the camera
-            frame = self.yolo.get_frame()
+            ret, frame = self.cap.read()
 
             # Get the width of the frame
             frame_width = frame.shape[1]
             
             # Use YOLO to detect QR codes in the frame
+            # Will define a funtion called detect()
             results = self.yolo.detect(frame)
 
             # If no codes are detected, continue the loop
+
+            # results.xyxy is the bounding box coordinates,
             if len(results.xyxy[0]) == 0:
                 continue
 
@@ -47,11 +51,17 @@ class Robot:
             else:
                 print("Reached the QR code, stopping movement.")
                 break
+            
+# Initialize camera
+cap = cv2.VideoCapture(1)
 
 # Initialize YOLO
-yolo = YOLOv5("path_to_yolov5_weights", device="cuda")
+yolo = YOLOv5("path_to_yolov5_weights")
 
 # Initialize the robot with the trained YOLO model and a target area of 10000
-robot = Robot(yolo, 10000)
+robot = Robot(yolo, 10000, cap)
 
 robot.navigate_to()
+
+cap.release()
+cv2.destoryAllWindows()
