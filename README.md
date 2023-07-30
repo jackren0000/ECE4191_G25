@@ -15,5 +15,8 @@ There are 3 functions right now: forward(speed), backward(speed), and stop().
 4. CheckTheCamera.py:
 The camera is different in every device, using this scipt first to check the camera number.
 
-5.InstructionOfConnectingMotor
+5. InstructionOfConnectingMotor
 This is a text file of how to connect the motor to TB9051FTG carrier and Raspberry pi.
+
+6. Ready for improvement
+This is the file needs suggestion and improvement.
