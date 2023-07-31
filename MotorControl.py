@@ -49,3 +49,28 @@ def stop():
     motor1_pwm2.start(0)
     motor2_pwm1.start(0)
     motor2_pwm2.start(0)
+
+# Function to test the motor control
+def test():
+    print("Moving forward")
+    forward(50)  # move forward at half speed
+    time.sleep(2)  # continue for 2 seconds
+
+    print("Turning left")
+    left(50)  # turn left at half speed
+    time.sleep(1)  # continue for 1 second
+
+    print("Moving forward")
+    forward(50)  # move forward at half speed
+    time.sleep(2)  # continue for 2 seconds
+
+    print("Turning right")
+    right(50)  # turn right at half speed
+    time.sleep(1)  # continue for 1 second
+
+    print("Stopping")
+    stop()  # stop
+
+
+# Call the test function
+test()
