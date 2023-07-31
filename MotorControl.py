@@ -2,34 +2,50 @@
 import RPI.GPIO as GPIO
 import time
 
-# Define the GPIO pin numbers
-PWM1_PIN = 18
-PWM2_PIN = 23
+# Define the GPIO pin numbers for the two motors
+MOTOR1_PWM1_PIN = 18
+MOTOR1_PWM2_PIN = 23
+MOTOR2_PWM1_PIN = 24
+MOTOR2_PWM2_PIN = 25
 
 # Set up the GPIO pins
-
-# Notice we choose BCM numbering system
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) # Notice we choose BCM numbering system
 # Set PWM1 and PWM2 as out pins, so they will send the signals
-GPIO.setup(PWM1_PIN, GPIO.OUT)
-GPIO.setup(PWM2_PIN, GPIO.OUT)
+GPIO.setup(MOTOR1_PWM1_PIN, GPIO.OUT)
+GPIO.setup(MOTOR1_PWM2_PIN, GPIO.OUT)
+GPIO.setup(MOTOR2_PWM1_PIN, GPIO.OUT)
+GPIO.setup(MOTOR2_PWM2_PIN, GPIO.OUT)
 
 # Set up the PWM frequencies
-pwm1 = GPIO.PWM(PWM1_PIN, 100)
-pwm2 = GPIO.PWM(PWM2_PIN, 100)
+motor1_pwm1 = GPIO.PWM(MOTOR1_PWM1_PIN, 100)
+motor1_pwm2 = GPIO.PWM(MOTOR1_PWM2_PIN, 100)
+motor2_pwm1 = GPIO.PWM(MOTOR2_PWM1_PIN, 100)
+motor2_pwm2 = GPIO.PWM(MOTOR2_PWM2_PIN, 100)
 
-# Function to drive the motor forward
-# Speed is duty cycle
+# Function to drive the robot forward
 def forward(speed):
-    pwm1.start(speed)
-    pwm2.start(0)
+    motor1_pwm1.start(speed)
+    motor1_pwm2.start(0)
+    motor2_pwm1.start(speed)
+    motor2_pwm2.start(0)
 
-# Funtion to drive the motor backward
-def backward(speed):
-    pwm1.start(0)
-    pwm2.start(speed)
+# Function to turn the robot left
+def left(speed):
+    motor1_pwm1.start(0)
+    motor1_pwm2.start(speed)
+    motor2_pwm1.start(speed)
+    motor2_pwm2.start(0)
 
-# Function to stop the motor
+# Function to turn the robot right
+def right(speed):
+    motor1_pwm1.start(speed)
+    motor1_pwm2.start(0)
+    motor2_pwm1.start(0)
+    motor2_pwm2.start(speed)
+
+# Function to stop the robot
 def stop():
-    pwm1.start(0)
-    pwm2.start(0)
+    motor1_pwm1.start(0)
+    motor1_pwm2.start(0)
+    motor2_pwm1.start(0)
+    motor2_pwm2.start(0)
