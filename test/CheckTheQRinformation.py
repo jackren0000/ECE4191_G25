@@ -10,7 +10,7 @@ class Robot:
 
     def navigate_to(self):
         qr_area = 0
-        tolerance = 0.1  # 10% tolerance
+        tolerance = 0.4  # 10% tolerance
         while qr_area < self.target_area:
             _, frame = self.cap.read()
             codes = decode(frame)
