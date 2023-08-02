@@ -61,9 +61,9 @@ class Robot:
                 # Replace with actual command to move robot forward
                 print("Moving forward")
 
-        # Break the loop if 'q' is pressed
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+            # Break the loop if 'q' is pressed
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
         print("Reached the QR code, stopping movement.")
 
