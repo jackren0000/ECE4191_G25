@@ -1,0 +1,29 @@
+1. Is there a minimum parcel dimension? 
+  Not sure yet, probably about 5cm.
+
+2. Is there a time limit on delivering a parcel once it has been loaded?
+  NO
+
+3. How long will we have to deliver parcels?
+  Probably around 5 mins total per round, may vary down the line depending on scheduling.
+
+4. Angus McLennan:
+Hello everyone, our group (group 10) is going to design a robot that follows the wall. If anyone is doing the same, PLEASE GO CLOCKWISE!!
+
+5. Will there be obstacles within the arena during Milestone 1/2?
+  For milestone 1 yes, for milestone 2 no
+
+6. How much voltage do the encoders on the motors use? 5 or 3.3v?
+    You can find a datasheet at https://www.pololu.com/product/4846/resources
+
+7. Do parcels need to be delivered by a specified robot?
+    No
+
+8. Hi, the requirement for the project is to pick and drop or only drop the parcel?
+    Hi Dhruv, you can place the parcel onto the robot yourself within the loading zone, so it is mainly to drop the parcel off at the correct goal.
+
+9. If we were to decide within the team of two robots, that one was to deliver only to zones 1 and 2, and the other was to deliver packages only to zone 3, is that allowed?
+  Hi Grant, that is fine if you communicate this across to the team you are working with. Just note that this may slow down your delivery system as we provide only a batch of parcels at a time
+
+10. Can the robot touch the walls of the arena?
+    please see the rubric for milestone 2 for collisions penalties. https://docs.google.com/spreadsheets/d/1-XoAi_h6sWWVySI017KD9s9TJiazB_5j_SDpMBxZS7s/edit?usp=drivesdk
