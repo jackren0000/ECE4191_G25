@@ -6,7 +6,7 @@ class Robot:
         self.x = x
         self.y = y
         self.cap = cap
-        self.target_area = 100
+        self.target_area = 50000
 
     def navigate_to(self):
         qr_area = 0
