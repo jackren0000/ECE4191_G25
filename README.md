@@ -1,5 +1,7 @@
 # ECE4191-G25
 
+In this project, the mian goal is to develop a warehouse robot which has the capabilities to sort the parcels into different bins. The robot first using computer vision technique to scan parcel's QR code, then nagivage to the destination and avoid the obstacles along the way.
+
 - **QRdetectionAndNavigation.py:** This file uses OpenCV to capture image from a camera and Pyzbar to detect QR codes. When the QR code is detected, it moves the 'robot' to these coordinates.
 
 - **yolo_QRdetectionAndNavigation.py:** This file is similar to the first one but uses YOLO to continuously capture and decode frames from the camera. It calculates the center and area of the QR code in each frame, and moves the robot towards the QR code until the area of the QR code is larger than a predefined target area. The key difference is that in the first file, the destination is pre-defined, but this file uses YOLO to get to the destination without knowing the destination's coordinates.
