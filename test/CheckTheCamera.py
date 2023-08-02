@@ -1,7 +1,7 @@
 import cv2
 
 # Initialize the camera, 0 is external camera, 1 is camera from iPhone
-cap = cv2.VideoCapture(-1)
+cap = cv2.VideoCapture(0)
 
 # Check whether camera was opened correctly. If not, raise an error
 if not cap.isOpened():
