@@ -1,0 +1,5 @@
+## try sudo xxx first
+
+1. connect the pi: ssh -X(enables X11 graphical display system, this is used to display camera through ssh) group25(user name)@118.139.81.210
+2. check if X11 system(graphical display) starts: ps aux | grep Xorg
+3. start x11 system: startx
