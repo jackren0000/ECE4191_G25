@@ -56,7 +56,7 @@ class Robot:
     #               break
 
 # Initialize the camera
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 # Check whether camera is open
 if not cap.isOpened():
