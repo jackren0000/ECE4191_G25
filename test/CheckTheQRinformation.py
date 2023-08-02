@@ -40,7 +40,7 @@ class Robot:
                 # cv2.rectangle(frame, (left, top), (left + width, top + height), (0, 255, 0), 3)
 
             # Display the resulting frame
-            # cv2.imshow('QR Code Detection', frame)
+            cv2.imshow('QR Code Detection', frame)
 
             # Break the loop if 'q' is pressed
             if cv2.waitKey(1) & 0xFF == ord('q'):
