@@ -6,7 +6,7 @@ class Robot:
         self.x = x
         self.y = y
         self.cap = cap
-        self.target_area = 50000
+        self.target_area = 150000
 
     def navigate_to(self):
         qr_area = 0
@@ -19,7 +19,7 @@ class Robot:
 
             # If no codes are detected, raise an error
             if not codes:
-                raise ValueError("No QR code detected")
+                print("No QR code detected")
 
             # Print information for all detected QR codes
             for code in codes:
