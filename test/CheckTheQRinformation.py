@@ -36,6 +36,16 @@ class Robot:
                 print(f"Coordinates: {code.polygon}")
                 print(f"Area: {qr_area}")  # Prints the size of the QR code's area
 
+                # Draw rectangle around the QR code
+                cv2.rectangle(frame, (left, top), (left + width, top + height), (0, 255, 0), 3)
+
+        # Display the resulting frame
+        cv2.imshow('QR Code Detection', frame)
+
+        # Break the loop if 'q' is pressed
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
     # Commented out movement commands
     #           # If QR code's center_x is in the left half of the image, move left
     #           if qr_center_x < frame.shape[1] / 2:
