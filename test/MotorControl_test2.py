@@ -4,7 +4,7 @@ from gpiozero import Robot
 from time import sleep
 
 # Initialize the robot
-robot = Robot(left = (4, 14), right = (17, 18))
+robot = Robot(left = (17, 27), right = (22, 23))
 
 # Move forward
 print('Moving forward')
