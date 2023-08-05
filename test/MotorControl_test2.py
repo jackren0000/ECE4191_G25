@@ -1,10 +1,13 @@
 ######### This is the motor control test using gpiozero.Robot library
 
-from gpiozero import Robot
+from gpiozero import Robot, PiGPIOFactory
 from time import sleep
 
+# Define the pin factory
+pin_factory = PiGPIOFactory()
+
 # Initialize the robot
-robot = Robot(left = (17, 27), right = (22, 23))
+robot = Robot(left=(17, 27), right=(22, 23), pin_factory=pin_factory)
 
 # Move forward
 print('Moving forward')
