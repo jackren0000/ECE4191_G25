@@ -1,18 +1,40 @@
-######### This is the motor control test using gpiozero.Robot library
+import RPi.GPIO as GPIO
+import time
 
-from gpiozero import Motor
-from time import sleep
+# Set the GPIO mode
+GPIO.setmode(GPIO.BCM)
 
-# Initialize the motor
-motor = Motor(forward=17, backward=27)
+# Define your motor control pins
+EN = 22  
+ENB = 23  
+PWM1 = 17 
+PWM2 = 27 
 
-# Spin in one direction
-motor.forward()
-sleep(2)
+# Set up the motor control pins
+GPIO.setup(EN, GPIO.OUT)
+GPIO.setup(ENB, GPIO.OUT)
+GPIO.setup(PWM1, GPIO.OUT)
+GPIO.setup(PWM2, GPIO.OUT)
 
-# Spin in the other direction
-motor.backward()
-sleep(2)
+p = GPIO.PWM(EN, 100)  # 100Hz frequency
 
-# Stop the motor
-motor.stop()
+try:
+    while True:
+        # Start the motor in forward/coast mode at 50% speed
+        GPIO.output(PWM1, GPIO.HIGH)
+        GPIO.output(PWM2, GPIO.LOW)
+        p.start(50)
+
+        time.sleep(2)  # run for 2 seconds
+
+        # Change direction to reverse/coast at 75% speed
+        GPIO.output(PWM1, GPIO.LOW)
+        GPIO.output(PWM2, GPIO.HIGH)
+        p.ChangeDutyCycle(75)
+
+        time.sleep(2)  # run for 2 seconds
+
+except KeyboardInterrupt:
+    # Stop the motor and clean up GPIO state
+    p.stop()
+    GPIO.cleanup()
