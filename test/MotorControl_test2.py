@@ -4,10 +4,10 @@ from gpiozero import Robot, PiGPIOFactory
 from time import sleep
 
 # Define the pin factory
-pin_factory = PiGPIOFactory()
+# pin_factory = PiGPIOFactory()
 
 # Initialize the robot
-robot = Robot(left=(17, 27), right=(22, 23), pin_factory=pin_factory)
+robot = Robot(left=(17, 27), right=(22, 23))
 
 # Move forward
 print('Moving forward')
