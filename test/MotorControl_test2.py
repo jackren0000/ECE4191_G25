@@ -1,6 +1,6 @@
 ######### This is the motor control test using gpiozero.Robot library
 
-from gpiozero import Robot, PiGPIOFactory
+from gpiozero import Robot
 from time import sleep
 
 # Define the pin factory
