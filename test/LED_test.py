@@ -12,7 +12,7 @@ GPIO.setup(PWM, GPIO.OUT)
 p = GPIO.PWM(PWM, 100)  # 100Hz frequency
 
 while (True):
-  p.start(50)  # Start with 50% duty cycle
+  p.start(90)  # Start with 50% duty cycle
   time.sleep(2)  # run for 2 seconds
   p.stop()  # Stop PWM
   
