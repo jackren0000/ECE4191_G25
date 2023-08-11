@@ -5,7 +5,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # Define your motor control pins
-EN = 22   # replace with your actual pin number
+EN = 4   # replace with your actual pin number
 ENB = 23  # replace with your actual pin number
 PWM1 = 17 # replace with your actual pin number
 PWM2 = 27 # replace with your actual pin number
