@@ -1,13 +1,13 @@
 import RPi.GPIO as GPIO
 import time
 
-PWM1 = 17 # replace with your actual pin number
+PWM = 17 # replace with your actual pin number
 
 # Set the GPIO mode
 GPIO.setmode(GPIO.BCM)
 
 # Create PWM object
-p = GPIO.PWM(EN, 100)  # 100Hz frequency
+p = GPIO.PWM(PWM, 100)  # 100Hz frequency
 
 while (True):
   p.start(50)  # Start with 50% duty cycle
