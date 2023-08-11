@@ -15,4 +15,4 @@ while (True):
   p.start(90)  # Start with 50% duty cycle
   time.sleep(2)  # run for 2 seconds
   p.stop()  # Stop PWM
-  
+  time.sleep(2) # stop for 2 seconds
