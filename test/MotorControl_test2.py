@@ -10,7 +10,7 @@ ENB = 23  # replace with your actual pin number
 PWM1 = 17 # replace with your actual pin number
 PWM2 = 27 # replace with your actual pin number
 
-# Set up the motor control pins
+# Set up the motor control pins zz
 GPIO.setup(EN, GPIO.OUT)
 GPIO.setup(ENB, GPIO.OUT)
 GPIO.setup(PWM1, GPIO.OUT)
