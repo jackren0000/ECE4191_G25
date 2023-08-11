@@ -6,6 +6,8 @@ PWM = 17 # replace with your actual pin number
 # Set the GPIO mode
 GPIO.setmode(GPIO.BCM)
 
+GPIO.setup(PWM, GPIO.OUT)
+
 # Create PWM object
 p = GPIO.PWM(PWM, 100)  # 100Hz frequency
 
