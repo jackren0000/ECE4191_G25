@@ -29,15 +29,16 @@ try:
         time.sleep(2)  # run for 2 seconds
         # p.stop()  # Stop PWM
 
-        '''
+        
         # Reverse/coast operation
-         GPIO.output(ENB, GPIO.HIGH)
+        GPIO.output(ENB, GPIO.HIGH)
         GPIO.output(PWM1, GPIO.LOW)
         GPIO.output(PWM2, GPIO.HIGH)
         p.start(50)  # Start with 50% duty cycle
         time.sleep(2)  # run for 2 seconds
         p.stop()  # Stop PWM
 
+        '''
         # Coast operation
         GPIO.output(ENB, GPIO.HIGH)
         GPIO.output(PWM1, GPIO.LOW)
