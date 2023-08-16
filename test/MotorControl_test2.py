@@ -27,7 +27,7 @@ try:
         GPIO.output(PWM2, GPIO.LOW)
         p.start(50)  # Start with 50% duty cycle
         time.sleep(2)  # run for 2 seconds
-        # p.stop()  # Stop PWM
+        p.stop()  # Stop PWM
 
         
         # Reverse/coast operation
