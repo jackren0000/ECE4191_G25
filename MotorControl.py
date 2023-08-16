@@ -1,4 +1,4 @@
-# Import Raspeberry Pi GPIO control library
+# Import Raspeberry Pi GPIO control  library
 import RPI.GPIO as GPIO
 import time
 
