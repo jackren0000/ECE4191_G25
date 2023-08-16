@@ -32,7 +32,7 @@ try:
         '''
         
         # Reverse/coast operation
-        GPIO.output(ENB, GPIO.HIGH)
+        GPIO.output(ENB, GPIO.LOW)
         GPIO.output(PWM1, GPIO.LOW)
         GPIO.output(PWM2, GPIO.HIGH)
         p.start(80)  # Start with 50% duty cycle
