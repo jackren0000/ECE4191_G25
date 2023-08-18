@@ -1,0 +1,3 @@
+sudo vi /usr/lib/python3/dist-packages/gpiozero/pins/lgpio.py
+:%s/SET_BIAS_DISABLE/SET_PULL_NONE/g
+:wq
