@@ -5,6 +5,7 @@ from gpiozero import RotaryEncoder
 
 # Set the GPIO mode
 GPIO.setmode(GPIO.BCM)
+GPIO.cleanup()
 
 # Assigning parameter values
 ppr = 300.8  # Pulses Per Revolution of the encoder
