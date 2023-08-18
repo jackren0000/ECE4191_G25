@@ -2,7 +2,6 @@ import time
 import numpy as np
 import RPi.GPIO as GPIO
 from gpiozero import RotaryEncoder
-from gpiozero.pins.native import NativeFactory
 
 # Set the GPIO mode
 GPIO.setmode(GPIO.BCM)
@@ -15,7 +14,7 @@ tsample = 0.02  # Sampling period for code execution (s)
 tdisp = 0.5  # Sampling period for values display (s)
 
 # Creating encoder object using GPIO pins 24 and 25
-encoder = RotaryEncoder(24, 25, max_steps=0, pin_factory=NativeFactory())
+encoder = RotaryEncoder(24, 25, max_steps=0)
 
 # Define your motor control pins
 EN = 22   # replace with your actual pin number
