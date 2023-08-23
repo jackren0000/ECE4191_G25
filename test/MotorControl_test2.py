@@ -1,3 +1,4 @@
+from gpiozero import RotaryEncoder
 import RPi.GPIO as GPIO
 import time
 
@@ -16,6 +17,9 @@ GPIO.setup(ENB, GPIO.OUT)
 GPIO.setup(PWM1, GPIO.OUT)
 GPIO.setup(PWM2, GPIO.OUT)
 
+# Creating encoder object using GPIO pins 24 and 25
+encoder = RotaryEncoder(24, 25, max_steps=1000000)
+
 # Create PWM object
 p = GPIO.PWM(EN, 100)  # 100Hz frequency
 
@@ -29,7 +33,8 @@ try:
         p.start(50)  # Start with 50% duty cycle
         time.sleep(2)  # run for 2 seconds
         p.stop()  # Stop PWM
-        
+
+        print(f"Encoder steps, {encoder.steps}")
         
         # Reverse/coast operation
         GPIO.output(ENB, GPIO.LOW)
