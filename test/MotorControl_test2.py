@@ -24,7 +24,7 @@ encoder = RotaryEncoder(20, 21, max_steps=1000000)
 p = GPIO.PWM(EN, 100)  # 100Hz frequency
 
 # Wheel parameters (replace with your actual values)
-steps_per_rotation = 75  # number of encoder steps per full rotation
+steps_per_rotation = 75 * 48 # number of encoder steps per full rotation
 wheel_diameter = 0.1  # wheel diameter in meters
 
 def calculate_speed(steps, time_interval):
