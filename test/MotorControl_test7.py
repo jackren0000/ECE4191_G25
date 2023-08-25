@@ -25,7 +25,7 @@ def compute_speed(steps, time_interval):
 
 # Drive the robot forward for 2 seconds and compute speed
 robot.forward()
-time.sleep(10)
+time.sleep(20)
 robot.stop()
 
 # Compute speed of left wheel
