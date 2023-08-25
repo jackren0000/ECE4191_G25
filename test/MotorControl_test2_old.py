@@ -14,11 +14,9 @@ GPIO.setup(PWM1, GPIO.OUT)
 GPIO.setup(PWM2, GPIO.OUT)
 # Create PWM object
 p = GPIO.PWM(EN, 100)  # 100Hz frequency
-
 try:
     while True:
-        
-
+        '''
         # Forward/coast operation
         GPIO.output(ENB, GPIO.LOW)
         GPIO.output(PWM1, GPIO.HIGH)
@@ -26,8 +24,24 @@ try:
         p.start(50)  # Start with 50% duty cycle
         time.sleep(2)  # run for 2 seconds
         p.stop()  # Stop PWM
-        
-
+        '''
 
         # Reverse/coast operation
+        GPIO.output(ENB, GPIO.HIGH)
         GPIO.output(ENB, GPIO.LOW)
+        GPIO.output(PWM1, GPIO.LOW)
+        GPIO.output(PWM2, GPIO.HIGH)
+        p.start(80)  # Start with 50% duty cycle
+        time.sleep(2)  # run for 2 seconds
+        p.stop()  # Stop PWM
+        '''
+        # Coast operation
+        GPIO.output(ENB, GPIO.HIGH)
+        GPIO.output(PWM1, GPIO.LOW)
+        GPIO.output(PWM2, GPIO.LOW)
+        time.sleep(2)  # coast for 2 seconds
+        '''
+except KeyboardInterrupt:
+    # Stop the motor and clean up GPIO state
+    p.stop()
+    GPIO.cleanup()
