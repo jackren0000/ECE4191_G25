@@ -17,7 +17,7 @@ p = GPIO.PWM(EN, 100)  # 100Hz frequency
 
 try:
     while True:
-        '''
+        
 
         # Forward/coast operation
         GPIO.output(ENB, GPIO.LOW)
@@ -26,7 +26,7 @@ try:
         p.start(50)  # Start with 50% duty cycle
         time.sleep(2)  # run for 2 seconds
         p.stop()  # Stop PWM
-        '''
+        
 
 
         # Reverse/coast operation
