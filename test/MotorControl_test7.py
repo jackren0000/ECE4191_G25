@@ -32,6 +32,7 @@ robot.stop()
 initial_steps_left = left_encoder.steps
 final_steps_left = left_encoder.steps
 speed_left = compute_speed(abs(final_steps_left - initial_steps_left), 2)
+print(final_steps_left)
 print(f"Left Wheel Speed: {speed_left} m/s")
 
 # Compute speed of right wheel
