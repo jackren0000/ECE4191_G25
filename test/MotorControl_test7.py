@@ -10,7 +10,7 @@ left_encoder_pins = (20, 21)
 right_encoder_pins = (24, 25)
 
 # Create Robot and Encoder objects
-robot = Robot(left=left_motor_pins, right=right_motor_pins)
+robot = Robot(left=left_motor_pins, right=right_motor_pins, pwm=True)
 left_encoder = RotaryEncoder(*left_encoder_pins, max_steps=1000000)
 right_encoder = RotaryEncoder(*right_encoder_pins, max_steps=1000000)
 
